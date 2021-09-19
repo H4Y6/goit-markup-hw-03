@@ -8,7 +8,12 @@
   --c1-color: #ECECEC;
   --c2-color: #F5F4FA;
   --c3-color: rgba(255, 255, 255, 0,6);
+  --c4-color: #EEEEEE;
   --d-color: #000000;
+
+  --title-gap: 50px;
+  --list-gap: 15px;
+  --item-title-gap: 10px;
 }
 
 body {
@@ -32,9 +37,12 @@ body {
 
  ul{
     list-style: none;
-    margin-top: 0;
-    margin-left: 0;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  p, h1, h2, h3, h4, h5{
+    margin: 0;
   }
 
 .visually-hidden {
@@ -59,7 +67,7 @@ body {
 
 .header{
   height: 80px;
-  border-bottom: 1px solid --c1-color ;
+  border-bottom: 1px solid var(--c1-color) ;
   } 
 
 .header-block{
@@ -131,7 +139,6 @@ body {
 /* hero */
 
 .hero{
-  height: 600px;
   padding: 200px 0;
   background:var(--bg-color);
 }
@@ -143,7 +150,6 @@ body {
   }
 
 .hero-title{
-  margin-top: 0;
   margin-bottom: 30px;
   font-size: 44px;
   font-weight: 900;
@@ -174,27 +180,21 @@ body {
   background: var(--second-color);
 }
 
-/* sections plan, plan & .placement */
+/*=== sections plan, deal & team==== */
 
 .section{
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.plan-list-block,
-.deal-list-block,
-.team-list-block{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 0;
-  margin-left: -15px;
-  margin-right: -15px;
-} 
+/* -- deal-title & team-title-- */
 
-
-.plan-item{
-  width: 270px;}
- 
+.deal-title,
+.team-title{
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: var(--title-gap);
+}
 
 .title{
   font-weight: 700;
@@ -202,32 +202,36 @@ body {
   color: var(--prime-title-color);
 }
 
+.plan-list,
+.deal-list,
+.team-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--list-gap));
+  margin-right: calc(-1 * var(--list-gap));
+} 
+
+.team-item,
+.plan-item{
+  flex-basis: calc(100% / 4 - 2 * var(--list-gap));
+  margin-left: var(--list-gap);
+  margin-right: var(--list-gap);
+}
+ .deal-item{
+  flex-basis: calc(100% /3 -2 * var(--list-gap)) ;
+  margin-left: var(--list-gap);
+  margin-right: var(--list-gap);
+ }
+
+
 .plan-item-title{
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: var(--item-title-gap);
   text-transform: uppercase;
 }
 
-.plan-item-text{
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
-/*  deal-title & team-title*/
 
-.deal-title,
-.team-title{
-  font-size: 36px;
-  text-align: center;
-}
-
-.deal-title-block,
-.team-title-block{
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-
-/* section team */
+/*-- team-- */
 
 .team{
   background: var(--c2-color);
@@ -237,23 +241,28 @@ body {
   font-size: 16px;
   line-height: 1.2;
   text-align: center;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-item-title{
-  margin-top: 30px;
-  margin-bottom: 10px;
+   margin-bottom: var(--item-title-gap);
   font-weight: 500;
   color: var(--prime-title-color);
 }
 
 .team-item-text{
-  margin-top: 0;
-  margin-bottom: 0;
   font-size: 16px;
-  color: var(--prime-text-color);
+  }
+
+.team-item-bottom{
+  padding-top:30px;
+  padding-bottom: 30px;
+  background-color:var(--c-color) ;
 }
 
-/* footer */
+
+/* =======footer========= */
 
 .footer{padding: 60px 0;
   background-color:var(--bg-color);
@@ -272,7 +281,7 @@ address{
    margin-bottom: 9px;
 }
 
-.footer-address-link-one{
+.footer-address-one{
  color: var(--c-color);
  text-decoration: none;
 }
@@ -296,17 +305,17 @@ address{
   margin-bottom: 20px;
 }
 
-/* portfolio */
+/* =========portfolio=========== */
 
-/* button-line */
+/* -----button-line------ */
 
-.btn-list{
+.portfolio-btn-list{
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
   }
 
-.btn{
+.portfolio-btn{
   min-width: 73px;
   height: 38px;
   padding: 6px 22px;
@@ -323,49 +332,41 @@ address{
   margin-right: 8px;
 }
 
-.btn:hover,
-.btn:focus{
+.portfolio-btn:hover,
+.portfolio-btn:focus{
 background: var(--prime-color);
 color: var(--c-color);
 }
 
-/*  --------folios------ */
+/*  --------portfolio list------ */
 
-.folio-list-block{
-display: flex;
-flex-wrap: wrap; 
+.portfolio-list{
+  display: flex;
+  flex-wrap: wrap; 
+  margin: calc(-1 * var(--list-gap)) ;
 }
 
-.folio-list{
-  margin-bottom: 0;
-  margin-left: -15px;
-  margin-right: -15px;
+.portfolio-card{
+  flex-basis: calc(100% / 3 - 2 * var(--list-gap)) ;
+  margin: var(--list-gap);
 }
 
-.card{
-  margin-right: 15px;
-  margin-left: 15px;
+.portfolio-card-bottom{
+  padding: 20px 24px;
+  outline: 1px solid var(--c4-color);
 }
 
-.card-bottom{
-  padding-left: 24px;
-  padding-bottom: 20px;
-}
-
-.folio-title{
+.portfolio-title{
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--prime-title-color);
-  margin-top: 20px;
   margin-bottom: 4px;
 }
 
-.folio-text{
+.portfolio-text{
   font-size: 16px;
   line-height: 1.87;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
