@@ -258,7 +258,9 @@ body {
 
 /* =======footer========= */
 
-.footer{padding: 60px 0;
+.footer{
+  padding: 60px 215px;
+  margin: 0 calc((100% - 1600px) / 2);
   background-color:var(--bg-color);
   }
 
